@@ -6,10 +6,10 @@ import { FaArrowRight } from "react-icons/fa";
 const Home: React.FC = () => {
     return (
         <main className=" h-fit pt-4 pb-6 md:px-8 px-4 flex flex-col items-center bg-gradient-to-b from-[#d6dbdc] to-[rgb(255,255,255)]">
-            <header className=" w-full h-[75px] flex items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:to-transparent before:blur-2xl before:content-[''] after:absolute after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
+            <header className=" w-full h-[75px] flex items-center md:before:absolute md:before:h-[300px] md:before:w-[480px] md:before:-translate-x-1/2 md:before:rounded-full md:before:bg-gradient-radial md:before:to-transparent md:before:blur-2xl md:before:content-[''] md:after:absolute md:after:h-[180px] md:after:w-[240px] md:after:translate-x-1/3 md:after:bg-gradient-conic md:after:from-sky-200 md:after:via-blue-200 md:after:blur-2xl md:after:content-[''] md:before:dark:bg-gradient-to-br md:before:dark:from-transparent md:before:dark:to-blue-700 md:before:dark:opacity-10 md:after:dark:from-sky-900 md:after:dark:via-[#0141ff] md:after:dark:opacity-40 md:before:lg:h-[360px]">
                 <Nav />
             </header>
-            <div className="flex flex-col items-center justify-center text-center pt-8 pb-6 max-w-3xl space-y-4 ">
+            <div className="flex flex-col items-center justify-center text-center pt-8 pb-6 max-w-3xl space-y-4 z-20">
                 <h1 className=" text-3xl sm:text-5xl md:text-6xl font-bold ">
                     ...thoughts, stories, and creativity converge seamlessly.
                     Welcome to <span className=" underline ">BlogBox</span>
