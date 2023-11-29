@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
     title: "BlogBox",
     description:
-        "gaterebot is an innovative chat application powered by ChatGPT through the OpenAI API.",
+        "An innovative blogging web application offering an intuitive and collaborative space for crafting and sharing insightful technical blogs.",
     openGraph: {
         images: [
             {
