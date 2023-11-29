@@ -9,7 +9,7 @@ const Home: React.FC = () => {
             <header className=" w-full h-[75px] flex items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] before:-z-20">
                 <Nav />
             </header>
-            <div className="flex flex-col items-center justify-center text-center pt-8 max-w-3xl space-y-4 ">
+            <div className="flex flex-col items-center justify-center text-center pt-8 pb-4 max-w-3xl space-y-4 ">
                 <h1 className=" text-3xl sm:text-5xl md:text-6xl font-bold ">
                     ...thoughts, stories, and creativity converge seamlessly.
                     Welcome to <span className=" underline ">BlogBox</span>
