@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Nav: React.FC = () => {
     return (
-        <nav className=" flex justify-between items-center w-full z-20">
+        <nav className=" flex justify-between items-center w-full z-30">
             <Image
                 src="https://res.cloudinary.com/dvuazircp/image/upload/v1699598453/new_portfolio/blogbox2_sftlp6.webp"
                 priority={true}
