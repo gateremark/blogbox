@@ -14,8 +14,8 @@ const Nav: React.FC = () => {
             <Image
                 src="https://res.cloudinary.com/dvuazircp/image/upload/v1699598449/new_portfolio/blogbox_gibi3k.webp"
                 priority={true}
-                width={500}
-                height={500}
+                width={592}
+                height={494}
                 alt="blogbox logo"
                 className="w-10 sm:w-20 h-auto md:hidden"
             />

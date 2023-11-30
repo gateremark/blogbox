@@ -27,6 +27,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
+            <link rel="preconnect" href="https://res.cloudinary.com" />
             <body className={inter.className}>{children}</body>
         </html>
     );
