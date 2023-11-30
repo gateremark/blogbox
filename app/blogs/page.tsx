@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { MdHome } from "react-icons/md";
 import Image from "next/image";
-import { LuLogOut } from "react-icons/lu";
+import { LuLogOut, LuPencilLine } from "react-icons/lu";
 import { useSession, signOut } from "next-auth/react";
 
 const Blogs = () => {
@@ -31,8 +31,7 @@ const Blogs = () => {
                     <div className="flex gap-4 ">
                         {session ? (
                             <div className=" flex gap-2 items-center justify-center bg-[#000000] text-[#D8DCDD] px-3 rounded hover:bg-[#2E2E2E] py-2 transition duration-200 ease-in-out cursor-default">
-                                Hello{" "}
-                                {session?.user?.name?.split(" ")[0] ?? "User"}
+                               My Blogs
                             </div>
                         ) : (
                             <Link
@@ -40,6 +39,16 @@ const Blogs = () => {
                                 className=" flex gap-2 items-center justify-center bg-[#000000] text-[#D8DCDD] px-3 rounded hover:bg-[#2E2E2E] py-2 transition duration-200 ease-in-out"
                             >
                                 Join BlogBox
+                            </Link>
+                        )}
+
+                        {session && (
+                            <Link
+                                href="/write"
+                                className="hover:bg-[#cacaca] md:px-3 md:py-2 px-2 py-1 rounded-md transition duration-200 ease-in-out flex justify-center items-center gap-1"
+                            title="Write"
+                            >
+                                Write <LuPencilLine />
                             </Link>
                         )}
 
