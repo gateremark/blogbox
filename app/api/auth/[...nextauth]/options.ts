@@ -50,7 +50,7 @@ export const options: NextAuthOptions = {
         // }),
     ],
     // pages: {
-    //     signIn: "/signin",
+    //     signIn: "/join",
     // },
     callbacks: {
         async redirect({ url, baseUrl }) {

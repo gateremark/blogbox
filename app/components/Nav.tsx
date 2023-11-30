@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { LuLogOut } from "react-icons/lu";
 import { useSession, signOut } from "next-auth/react";
-import { title } from "process";
 
 const Nav: React.FC = () => {
     const { data: session } = useSession();
@@ -39,9 +38,17 @@ const Nav: React.FC = () => {
                         Join BlogBox
                     </Link>
                 )}
+
+                <Link
+                    href="/blogs"
+                    className="hover:bg-[#cacaca] md:px-3 md:py-2 px-2 py-1 rounded-md transition duration-200 ease-in-out"
+                >
+                    All Blogs
+                </Link>
+
                 {session && (
                     <button
-                        className="hover:bg-[#cacaca] md:px-3 md:py-2 px-2 py-1 rounded-md transition duration-200 ease-in-out"
+                        className="hover:bg-[#cacaca] px-2 py-2 rounded-md transition duration-200 ease-in-out border border-solid border-[#000000]"
                         onClick={() => signOut()}
                         title="Sign Out"
                     >
