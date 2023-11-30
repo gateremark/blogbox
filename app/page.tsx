@@ -6,7 +6,7 @@ import { FaArrowRight } from "react-icons/fa";
 const Home: React.FC = () => {
     return (
         <main className="relative h-fit pt-4 pb-6 md:px-8 px-4 flex flex-col items-center bg-gradient-to-b from-[#d6dbdc] to-[#ffffff]">
-            <header className=" w-full h-[75px] flex items-center md:before:absolute md:before:h-[300px] md:before:w-[480px] md:before:-translate-x-1/2 md:before:rounded-full md:before:bg-gradient-radial md:before:to-transparent md:before:blur-2xl md:before:content-[''] md:after:absolute md:after:h-[180px] md:after:w-[240px] md:after:translate-x-1/3 md:after:bg-gradient-conic md:after:from-sky-200 md:after:via-blue-200 md:after:blur-2xl md:after:content-[''] md:before:dark:bg-gradient-to-br md:before:dark:from-transparent md:before:dark:to-blue-700 md:before:dark:opacity-10 md:after:dark:from-sky-900 md:after:dark:via-[#0141ff] md:after:dark:opacity-40 md:before:lg:h-[360px]">
+            <header className=" w-full h-[75px] flex items-center ">
                 <Nav />
             </header>
             <div className="bg___svg h-full w-full absolute z-20"></div>
