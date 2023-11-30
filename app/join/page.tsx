@@ -20,7 +20,7 @@ const Join: React.FC = () => {
         fetchProviders();
     }, []);
     return (
-        <main className="relative h-screen pt-4 pb-6 md:px-8 px-4 flex flex-col items-center justify-center bg-gradient-to-b from-[#d6dbdc] to-[#ffffff]">
+        <main className="relative h-fit md:h-screen pt-4 pb-6 md:px-8 px-4 flex flex-col items-center justify-center bg-gradient-to-b from-[#d6dbdc] to-[#ffffff]">
             <Image
                 src="https://res.cloudinary.com/dvuazircp/image/upload/v1699598453/new_portfolio/blogbox2_sftlp6.webp"
                 priority={true}

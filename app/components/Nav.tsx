@@ -41,7 +41,7 @@ const Nav: React.FC = () => {
 
                 <Link
                     href="/blogs"
-                    className="hover:bg-[#cacaca] md:px-3 md:py-2 px-2 py-1 rounded-md transition duration-200 ease-in-out"
+                    className="hover:bg-[#cacaca] md:px-3 md:py-2 px-2 py-1 rounded-md transition duration-200 ease-in-out flex justify-center"
                 >
                     All Blogs
                 </Link>
