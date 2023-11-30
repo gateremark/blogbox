@@ -9,8 +9,8 @@ import { useSession, signOut } from "next-auth/react";
 const Blogs = () => {
     const { data: session } = useSession();
     return (
-        <div className="relative h-screen pt-5 pb-6 md:px-8 px-4 flex flex-col items-center bg-gradient-to-b from-[#d6dbdc] to-[#ffffff]">
-            <div className="flex w-full items-center gap-2">
+        <div className="relative h-screen pt-5 pb-6 md:px-8 px-4 flex flex-col items-center bg-gradient-to-b from-[#d6dbdc] to-[#ffffff] gap-2">
+            <header className="flex w-full items-center gap-2">
                 <nav className=" flex justify-between items-center w-full z-30">
                     <Image
                         src="https://res.cloudinary.com/dvuazircp/image/upload/v1699598453/new_portfolio/blogbox2_sftlp6.webp"
@@ -70,7 +70,7 @@ const Blogs = () => {
                 >
                     <MdHome />
                 </Link>
-            </div>
+            </header>
 
             <h1 className="text-5xl font-semibold text-center">Blogs</h1>
         </div>
