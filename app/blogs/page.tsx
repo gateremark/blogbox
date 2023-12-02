@@ -5,9 +5,13 @@ import { MdHome } from "react-icons/md";
 import Image from "next/image";
 import { LuLogOut, LuPencilLine } from "react-icons/lu";
 import { useSession, signOut } from "next-auth/react";
+import { v4 as uuidv4 } from "uuid";
+import { useRouter } from "next/navigation";
 
 const Blogs = () => {
     const { data: session } = useSession();
+    const router = useRouter();
+    const id = uuidv4();
     return (
         <div className="relative h-screen pt-5 pb-6 md:px-8 px-4 flex flex-col items-center bg-gradient-to-b from-[#d6dbdc] to-[#ffffff] gap-2">
             <header className="flex w-full items-center gap-2">
@@ -31,7 +35,7 @@ const Blogs = () => {
                     <div className="flex gap-4 ">
                         {session ? (
                             <div className=" flex gap-2 items-center justify-center bg-[#000000] text-[#D8DCDD] px-3 rounded hover:bg-[#2E2E2E] py-2 transition duration-200 ease-in-out cursor-default">
-                               My Blogs
+                                My Blogs
                             </div>
                         ) : (
                             <Link
@@ -43,13 +47,13 @@ const Blogs = () => {
                         )}
 
                         {session && (
-                            <Link
-                                href="/write"
+                            <button
+                                onClick={() => router.push(`/write/${id}`)}
                                 className="hover:bg-[#cacaca] md:px-3 md:py-2 px-2 py-1 rounded-md transition duration-200 ease-in-out flex justify-center items-center gap-1"
-                            title="Write"
+                                title="Write"
                             >
                                 Write <LuPencilLine />
-                            </Link>
+                            </button>
                         )}
 
                         {session && (
@@ -73,6 +77,7 @@ const Blogs = () => {
             </header>
 
             <h1 className="text-5xl font-semibold text-center">Blogs</h1>
+            <div className="flex flex-col"></div>
         </div>
     );
 };

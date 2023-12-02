@@ -49,12 +49,17 @@ export const options: NextAuthOptions = {
         //     },
         // }),
     ],
-    // pages: {
-    //     signIn: "/join",
-    // },
+    pages: {
+        signIn: "/signin",
+    },
     callbacks: {
         async redirect({ url, baseUrl }) {
             return baseUrl;
         },
     },
+    // callbacks: {
+    //     async redirect({ url, baseUrl }) {
+    //         return url.startsWith(baseUrl) ? url : baseUrl;
+    //     },
+    // },
 };
