@@ -10,7 +10,7 @@ const page = () => {
     return (
         <div>
             <div className="h-60">
-                <h1>Page</h1>
+                <h1 className=" ml-2 mt-2">Incomplete</h1>
             </div>
             <div className=" px-10 lg:px-60 md:px-44 sm:px-24 xl:px-72">
                 <Toolbar />

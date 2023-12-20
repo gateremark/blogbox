@@ -3,7 +3,7 @@
 import { ElementRef, useRef, useState } from "react";
 import { CiImageOn } from "react-icons/ci";
 import TextareaAutosize from "react-textarea-autosize";
-import { Cloudinary } from "@cloudinary/url-gen";
+import { ref, uploadBytesResumable } from "firebase/storage";
 import { v4 as uuidv4 } from "uuid";
 
 export const Toolbar = () => {
@@ -11,7 +11,6 @@ export const Toolbar = () => {
     const [isEditing, setIsEditing] = useState(false);
     const [value, setValue] = useState("Add Title...");
     const [image, setImage] = useState(null);
-    const cld = new Cloudinary({ cloud: { cloudName: "dvuazircp" } });
 
     const onChange = (e: any) => {
         setImage(e.target.files);
@@ -49,7 +48,7 @@ export const Toolbar = () => {
                         htmlFor="image"
                         className=" cursor-pointer flex justify-center items-center gap-2"
                     >
-                        <CiImageOn className="text-xl" />
+                        <CiImageOn className="text-xl cursor-pointer" />
                         Add Cover
                     </label>
                     <input
@@ -67,6 +66,7 @@ export const Toolbar = () => {
                         onChange={onChange}
                         title=""
                         accept=".jpg, .png, .jpeg, .webp"
+                        className="cursor-pointer"
                     />
                 </button>
             </div>
