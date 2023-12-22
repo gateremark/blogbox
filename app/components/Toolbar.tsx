@@ -46,9 +46,9 @@ export const Toolbar = () => {
                 <button className="relative opacity-100 bg-[#cacaca] md:px-3 md:py-2 px-2 py-1 rounded-md transition duration-100 ease-in-out flex justify-center items-center gap-2">
                     <label
                         htmlFor="image"
-                        className=" cursor-pointer flex justify-center items-center gap-2"
+                        className=" cursor-pointer flex justify-center items-center gap-2 dark:text-[#000000]"
                     >
-                        <CiImageOn className="text-xl cursor-pointer" />
+                        <CiImageOn className="text-xl cursor-pointer dark:text-[#000000]" />
                         Add Cover
                     </label>
                     <input
