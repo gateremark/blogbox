@@ -4,8 +4,10 @@ import Image from "next/image";
 import { signIn, getProviders } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
+import { useTheme } from "next-themes";
 
 const Join: React.FC = () => {
+    const { theme } = useTheme();
     const [providers, setProviders] = useState<Record<string, any> | null>(
         null
     );
@@ -20,24 +22,47 @@ const Join: React.FC = () => {
         fetchProviders();
     }, []);
     return (
-        <main className="relative h-fit md:h-screen pt-4 pb-6 md:px-8 px-4 flex flex-col items-center justify-center bg-gradient-to-b from-[#d6dbdc] to-[#ffffff]">
-            <Image
-                src="https://res.cloudinary.com/dvuazircp/image/upload/v1699598453/new_portfolio/blogbox2_sftlp6.webp"
-                priority={true}
-                width={500}
-                height={500}
-                alt="blogbox logo"
-                className="md:absolute w-60 h-auto z-30 top-[22px] md:left-8"
-            />
-            <div className="bg___svg h-full w-full absolute z-20"></div>
-            <div className="flex flex-col-reverse md:flex-row justify-center items-center">
+        <main className="relative h-fit md:h-screen pt-4 pb-6 md:px-8 px-4 flex flex-col items-center justify-center bg-gradient-to-b from-[#d6dbdc] to-[#ffffff] dark:from-[#000000] dark:to-[#121212]">
+            {theme === "light" ? (
                 <Image
-                    src="https://res.cloudinary.com/dvuazircp/image/upload/v1701293531/new_portfolio/kqvhmllwvodva5pjr6fs.webp"
-                    height={500}
+                    src="https://res.cloudinary.com/dvuazircp/image/upload/v1699598453/new_portfolio/blogbox2_sftlp6.webp"
+                    priority={true}
                     width={500}
-                    alt="Logo"
-                    className="w-[500px] h-auto pt-10 z-30"
+                    height={500}
+                    alt="blogbox logo"
+                    className="md:absolute w-60 h-auto z-30 top-[22px] md:left-8"
                 />
+            ) : (
+                <Image
+                    src="https://res.cloudinary.com/dvuazircp/image/upload/v1703279388/new_portfolio/blogwhite_sopfqk.webp"
+                    priority={true}
+                    width={500}
+                    height={500}
+                    alt="blogbox logo"
+                    className="md:absolute w-60 h-auto z-30 top-[22px] md:left-8"
+                />
+            )}
+
+            <div className="bg___svg h-full w-full absolute z-20 dark:opacity-5"></div>
+            <div className="flex flex-col-reverse md:flex-row justify-center items-center">
+                {theme === "dark" ? (
+                    <Image
+                        src="https://res.cloudinary.com/dvuazircp/image/upload/v1703279901/new_portfolio/reading_no5et4.webp"
+                        height={500}
+                        width={500}
+                        alt="Logo"
+                        className="w-[500px] h-auto pt-10 z-30"
+                    />
+                ) : (
+                    <Image
+                        src="https://res.cloudinary.com/dvuazircp/image/upload/v1701293531/new_portfolio/kqvhmllwvodva5pjr6fs.webp"
+                        height={500}
+                        width={500}
+                        alt="Logo"
+                        className="w-[500px] h-auto pt-10 z-30"
+                    />
+                )}
+
                 <div className=" flex flex-col items-center z-30 pt-10">
                     <h1 className=" text-5xl font-semibold text-center">
                         Sign in / Register
@@ -51,7 +76,7 @@ const Join: React.FC = () => {
                                     className=""
                                 >
                                     <button
-                                        className=" flex gap-2 items-center justify-center bg-[#000000] text-[#D8DCDD] px-3 rounded hover:bg-[#2E2E2E] py-2 transition duration-200 ease-in-out"
+                                        className=" flex gap-2 items-center justify-center bg-[#000000] text-[#D8DCDD] px-3 rounded hover:bg-[#2E2E2E] py-2 transition duration-200 ease-in-out dark:bg-[#ffffff] dark:text-[#000000] dark:hover:bg-[#808080]"
                                         onClick={() => signIn(provider.id)}
                                     >
                                         <FcGoogle />
