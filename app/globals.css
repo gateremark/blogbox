@@ -28,3 +28,7 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #7c7c7c;
 }
+
+.tiptap.ProseMirror {
+    outline: none;
+}
