@@ -69,8 +69,9 @@ export const Toolbar = () => {
                         className="cursor-pointer"
                     />
                 </button>
-                <span className=" text-[] dark:text-[] italic">"
-                    <span className=" font-bold">Ctrl + C</span> for AI autocompletion"
+                <span className=" text-[#7e7e7e] italic">
+                    &quot;<span className=" font-bold">Ctrl + C</span> for AI
+                    autocompletion&quot;
                 </span>
             </div>
             {isEditing ? (
