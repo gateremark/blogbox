@@ -9,7 +9,7 @@ import { FiSun, FiMoon } from "react-icons/fi";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 
-const page = () => {
+const Page = () => {
     // console.log(uuidv4());
     // const { data: session } = useSession();
     // console.log(session);
@@ -63,4 +63,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;
