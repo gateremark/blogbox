@@ -1,5 +1,23 @@
 ![GitHub deployments](https://img.shields.io/github/deployments/gateremark/blogbox/production?style=flat&logo=vercel&logoColor=white&label=vercel)
 
+<div align="center">
+<a href="https://myblogbox.vercel.app/">
+   
+![Blogbox](https://res.cloudinary.com/dvuazircp/image/upload/v1703355913/Screenshot_from_2023-12-23_21-21-20_hvqcvs.png)
+
+</a>
+</div>
+
+---
+
+<div align="center">
+<a href="https://myblogbox.vercel.app/">
+   
+![Blogbox dark](https://res.cloudinary.com/dvuazircp/image/upload/v1703355912/Screenshot_from_2023-12-23_21-21-10_pilvwc.png)
+
+</a>
+</div>
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
