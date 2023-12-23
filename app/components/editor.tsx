@@ -1,9 +1,12 @@
+"use client";
+
 import { BlockNoteEditor } from "@blocknote/core";
 import { BlockNoteView, useBlockNote } from "@blocknote/react";
 import "@blocknote/core/style.css";
 import { useTheme } from "next-themes";
 import * as Y from "yjs";
 import { WebrtcProvider } from "y-webrtc";
+// import YPartyKitProvider from "y-partykit/provider";
 import { useSession } from "next-auth/react";
 
 export default function Editor() {
@@ -14,6 +17,12 @@ export default function Editor() {
     // console.log(userName, userEmail);
 
     const provider = new WebrtcProvider(userEmail, doc);
+    // const provider = new YPartyKitProvider(
+    //     "blocknote-dev.yousefed.partykit.dev",
+    //     // use a unique name as a "room" for your application:
+    //     "your-project-name",
+    //     doc
+    // );
     // Creates a new editor instance.
     const editor: BlockNoteEditor = useBlockNote({
         collaboration: {

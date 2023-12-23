@@ -33,6 +33,7 @@
     "react-textarea-autosize": "^8.5.3",
     "sonner": "^1.2.4",
     "uuid": "^9.0.1",
+    "y-partykit": "^0.0.11",
     "y-webrtc": "^10.2.6",
     "yjs": "^13.6.10"
   },

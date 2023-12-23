@@ -77,6 +77,9 @@ dependencies:
   uuid:
     specifier: ^9.0.1
     version: 9.0.1
+  y-partykit:
+    specifier: ^0.0.11
+    version: 0.0.11
   y-webrtc:
     specifier: ^10.2.6
     version: 10.2.6(yjs@13.6.10)
@@ -7682,6 +7685,16 @@ packages:
   /xxhash-wasm@1.0.2:
     resolution: {integrity: sha512-ibF0Or+FivM9lNrg+HGJfVX8WJqgo+kCLDc4vx6xMeTce7Aj+DLttKbxxRR/gNLSAelRc1omAPlJ77N/Jem07A==}
     dev: true
+
+  /y-partykit@0.0.11:
+    resolution: {integrity: sha512-cR7zOkBLwo90BPZlCGXgXxnebash4TNRT2SBOQq3iGxyo9y2NM61AW9e+aihEnpV6fjTF42CYWsi6uPUPjiICA==}
+    dependencies:
+      lib0: 0.2.88
+      lodash.debounce: 4.0.8
+      react: 18.2.0
+      y-protocols: 1.0.6(yjs@13.6.10)
+      yjs: 13.6.10
+    dev: false
 
   /y-prosemirror@1.0.20(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.4)(y-protocols@1.0.6)(yjs@13.6.10):
     resolution: {integrity: sha512-LVMtu3qWo0emeYiP+0jgNcvZkqhzE/otOoro+87q0iVKxy/sMKuiJZnokfJdR4cn9qKx0Un5fIxXqbAlR2bFkA==}
