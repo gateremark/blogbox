@@ -50,9 +50,6 @@ dependencies:
   openai:
     specifier: ^4.24.1
     version: 4.24.1
-  openai-edge:
-    specifier: ^1.2.2
-    version: 1.2.2
   pg:
     specifier: ^8.11.3
     version: 8.11.3
@@ -5861,11 +5858,6 @@ packages:
     dependencies:
       wrappy: 1.0.2
     dev: true
-
-  /openai-edge@1.2.2:
-    resolution: {integrity: sha512-C3/Ao9Hkx5uBPv9YFBpX/x59XMPgPUU4dyGg/0J2sOJ7O9D98kD+lfdOc7v/60oYo5xzMGct80uFkYLH+X2qgw==}
-    engines: {node: '>=18'}
-    dev: false
 
   /openai@4.24.1:
     resolution: {integrity: sha512-ezm/O3eiZMnyBqirUnWm9N6INJU1WhNtz+nK/Zj/2oyKvRz9pgpViDxa5wYOtyGYXPn1sIKBV0I/S4BDhtydqw==}

@@ -24,7 +24,6 @@
     "next-auth": "^4.24.5",
     "next-themes": "^0.2.1",
     "openai": "^4.24.1",
-    "openai-edge": "^1.2.2",
     "pg": "^8.11.3",
     "postgres": "^3.4.3",
     "react": "^18",

@@ -1,4 +1,8 @@
-import { BlockNoteEditor } from "@blocknote/core";
+import {
+    BlockNoteEditor,
+    uploadToTmpFilesDotOrg_DEV_ONLY,
+    Block,
+} from "@blocknote/core";
 import { BlockNoteView, useBlockNote } from "@blocknote/react";
 import "@blocknote/core/style.css";
 import { useTheme } from "next-themes";
@@ -6,10 +10,17 @@ import * as Y from "yjs";
 import { WebrtcProvider } from "y-webrtc";
 // import YPartyKitProvider from "y-partykit/provider";
 import { useSession } from "next-auth/react";
+import { useState, useRef, useEffect } from "react";
+import { useCompletion } from "ai/react";
 
 export default function Editor() {
     const { data: session } = useSession();
     const doc = new Y.Doc();
+    const [blocks, setBlocks] = useState<Block[] | null>(null);
+    // const [blockText, setBlockText] = useState<string | null>(null);
+    const { completion, complete } = useCompletion({
+        api: "/api/completion",
+    });
 
     const userName = session?.user?.name ?? "";
     // const userEmail = session?.user?.email ?? "";
@@ -23,8 +34,76 @@ export default function Editor() {
     //     doc
     // );
     // Creates a new editor instance.
-    console.log("userName: ", userName);
+
+    // console.log("Block: ", blocks?.[0]?.content[0]?.text);
+    // console.log("Block2: ", JSON.stringify(blocks));
+
+    // const blockText = blocks?.[0]?.content[0]?.text;
+    // console.log(blockText);
+    //  setBlockText(blocks?.[0]?.content[0]?.text);
+
+    // useEffect(() => {
+    //     if (blocks?.[0]?.content[0]?.text !== undefined) {
+    //         setBlockText(blocks?.[0]?.content[0]?.text);
+    //     }
+    // }, [blocks]);
+    const blockText = useRef(null);
+
+    useEffect(() => {
+        if (blocks?.[0]?.content[0]?.text !== undefined) {
+            blockText.current = blocks?.[0]?.content[0]?.text;
+        }
+    }, [blocks]);
+
+    // console.log("blockText3: ", blockText.current);
+
+    const insertNewBlockShortcut = async (
+        event: KeyboardEvent,
+        editor: BlockNoteEditor
+    ) => {
+        if (event.key === "Tab") {
+            // event.preventDefault();
+
+            if (blockText.current !== "") {
+                // When the tab key is pressed, send the blockText to the completion API
+                try {
+                    if (blockText.current !== null) {
+                        console.log("blockText: ", blockText.current);
+                        console.log(
+                            "blockTextType: ",
+                            typeof blockText.current
+                        );
+                        const completionResult = await complete(
+                            blockText.current
+                        );
+                        console.log("Completion: ", completionResult);
+                    }
+                } catch (error) {
+                    // Handle any errors here
+                    console.error("Error with completion: ", error);
+                }
+            }
+            // console.log("Completion: ", completion);
+
+            editor.insertBlocks(
+                [{ content: "This block was inserted!" }],
+                editor.getTextCursorPosition().block,
+                "after"
+            );
+        }
+    };
+    // console.log("Completion: ", completion);
+
     const editor: BlockNoteEditor = useBlockNote({
+        onEditorContentChange: (editor) => {
+            setBlocks(editor.topLevelBlocks);
+        },
+        onEditorReady: (editor) =>
+            editor.domElement.addEventListener("keydown", (event) =>
+                insertNewBlockShortcut(event, editor)
+            ),
+
+        uploadFile: uploadToTmpFilesDotOrg_DEV_ONLY,
         collaboration: {
             provider,
             fragment: doc.getXmlFragment("document-store"),
@@ -34,6 +113,7 @@ export default function Editor() {
             },
         },
     });
+    // console.log(editor.topLevelBlocks);
     const { theme } = useTheme();
 
     // Renders the editor instance using a React component.
