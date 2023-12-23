@@ -14,7 +14,7 @@ export const Toolbar = () => {
 
     const onChange = (e: any) => {
         setImage(e.target.files);
-        console.log(e.target.files);
+        // console.log(e.target.files);
     };
 
     const enableInput = () => {
