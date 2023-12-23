@@ -16,7 +16,7 @@ const Home: React.FC = () => {
 
     return (
         <main className="relative h-fit pt-4 pb-6 md:px-8 px-4 flex flex-col items-center bg-gradient-to-b from-[#d6dbdc] to-[#ffffff] dark:from-[#000000] dark:to-[#121212]">
-            <Toaster richColors position="top-right" closeButton />
+            <Toaster richColors position="bottom-left" closeButton />
             <header className=" w-full h-[75px] flex items-center ">
                 <Nav />
             </header>
