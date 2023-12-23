@@ -18,7 +18,7 @@ import { useCompletion } from "ai/react";
 export default function Editor() {
     const { data: session } = useSession();
     const doc = new Y.Doc();
-    const [blocks, setBlocks] = useState<Block[] | null>(null);
+    // const [blocks, setBlocks] = useState<Block[] | null>(null);
     // const [blockText, setBlockText] = useState<string | null>(null);
     const { completion, complete } = useCompletion({
         api: "/api/completion",
@@ -96,7 +96,7 @@ export default function Editor() {
 
     const editor: BlockNoteEditor = useBlockNote({
         onEditorContentChange: (editor) => {
-            setBlocks(editor.topLevelBlocks);
+            // setBlocks(editor.topLevelBlocks);
         },
         onEditorReady: (editor) =>
             editor.domElement.addEventListener("keydown", (event) =>
