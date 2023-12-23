@@ -21,6 +21,8 @@ const Blogs = () => {
     useEffect(() => setMounted(true), []);
 
     if (!mounted) return null;
+
+    console.log("Agent:", navigator.userAgent.match);
     return (
         <div className="relative h-screen pt-5 pb-6 md:px-8 px-4 flex flex-col items-center bg-gradient-to-b from-[#d6dbdc] to-[#ffffff] gap-2 dark:from-[#000000] dark:to-[#121212]">
             <header className="flex w-full items-center gap-2">
@@ -77,7 +79,16 @@ const Blogs = () => {
                                 Join BlogBox
                             </Link>
                         )}
-
+                        {/* if
+                        (navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera
+                        Mini|IEMobile/i)){" "}
+                        {
+                            // Code for mobile devices
+                        }{" "}
+                        else{" "}
+                        {
+                            // Code for desktop devices
+                        } */}
                         {session && (
                             <button
                                 onClick={() => router.push(`/write/${id}`)}
@@ -87,7 +98,6 @@ const Blogs = () => {
                                 Write <LuPencilLine />
                             </button>
                         )}
-
                         {session && (
                             <button
                                 className="hover:bg-[#cacaca] dark:hover:bg-[#4e4e4e] px-2 py-2 rounded-md transition duration-200 ease-in-out border border-solid border-[#000000] dark:border-[#ffffff]"
