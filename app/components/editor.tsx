@@ -47,42 +47,40 @@ export default function Editor() {
     //         setBlockText(blocks?.[0]?.content[0]?.text);
     //     }
     // }, [blocks]);
-    const blockText = useRef(null);
-
-    useEffect(() => {
-        if (blocks?.[0]?.content[0]?.text !== undefined) {
-            blockText.current = blocks?.[0]?.content[0]?.text;
-        }
-    }, [blocks]);
 
     // console.log("blockText3: ", blockText.current);
+    // const blockText = useRef(null);
+    // useEffect(() => {
+    //     if (blocks?.[0]?.content[0]?.text !== undefined) {
+    //         blockText.current = blocks?.[0]?.content[0]?.text;
+    //     }
+    // }, [blocks]);
 
     const insertNewBlockShortcut = async (
         event: KeyboardEvent,
         editor: BlockNoteEditor
     ) => {
-        if (event.key === "Tab") {
-            // event.preventDefault();
+        if (event.ctrlKey && event.key === "c") {
+            const textCursorPosition: any = editor.getTextCursorPosition();
+            const blockText = textCursorPosition.block.content?.[0]?.text;
+            console.log(
+                "textCursorPosition: ",
+                textCursorPosition.block.content?.[0]?.text
+            );
 
-            if (blockText.current !== "") {
-                // When the tab key is pressed, send the blockText to the completion API
+            if (blockText !== undefined) {
+                // send the blockText to the completion API
                 try {
-                    if (blockText.current !== null) {
-                        console.log("blockText: ", blockText.current);
-                        console.log(
-                            "blockTextType: ",
-                            typeof blockText.current
-                        );
-                        const completionResult = await complete(
-                            blockText.current
-                        );
-                        console.log("Completion: ", completionResult);
-                    }
+                    const completionResult = await complete(blockText);
+                    console.log("Completion: ", completionResult);
                 } catch (error) {
                     // Handle any errors here
                     console.error("Error with completion: ", error);
                 }
+            } else {
+                window.alert("Please enter some text");
             }
+
             // console.log("Completion: ", completion);
 
             editor.insertBlocks(
