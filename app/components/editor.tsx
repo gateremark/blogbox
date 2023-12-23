@@ -19,7 +19,7 @@ export default function Editor() {
     const userEmail = session?.user?.email ?? "";
     // console.log(userName, userEmail);
 
-    const provider = new WebrtcProvider(userEmail, doc);
+    const provider = new WebrtcProvider("blogbox", doc);
     // const provider = new YPartyKitProvider(
     //     "blocknote-dev.yousefed.partykit.dev",
     //     // use a unique name as a "room" for your application:
