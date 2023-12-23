@@ -5,14 +5,23 @@ import { Toolbar } from "@/app/components/Toolbar";
 import Link from "next/link";
 import { MdArrowBack } from "react-icons/md";
 import Editor from "@/app/components/editor";
+import { FiSun, FiMoon } from "react-icons/fi";
+import { useTheme } from "next-themes";
+import { useState, useEffect } from "react";
 
 const page = () => {
     // console.log(uuidv4());
     // const { data: session } = useSession();
     // console.log(session);
+    const [mounted, setMounted] = useState(false);
+    const { theme, setTheme } = useTheme();
+
+    useEffect(() => setMounted(true), []);
+
+    if (!mounted) return null;
 
     return (
-        <div>
+        <div className=" bg-gradient-to-b dark:from-[#000000] dark:to-[#121212]">
             <div className="h-60 flex gap-2 items-center">
                 <h1 className=" ml-5">Incomplete...</h1>
                 <Link
@@ -24,12 +33,31 @@ const page = () => {
                     <MdArrowBack />
                     Go back
                 </Link>
+                {theme === "dark" ? (
+                    <button
+                        className="hover:bg-[#4e4e4e] px-2 py-2 rounded-md transition duration-200 ease-in-out"
+                        onClick={() => setTheme("light")}
+                        title="Light Mode"
+                    >
+                        <FiSun className="text-2xl" />
+                    </button>
+                ) : (
+                    <button
+                        className="hover:bg-[#4e4e4e] px-2 py-2 rounded-md transition duration-200 ease-in-out"
+                        onClick={() => setTheme("dark")}
+                        title="Dark Mode"
+                    >
+                        <FiMoon className="text-2xl" />
+                    </button>
+                )}
             </div>
-            <div className=" px-16 lg:px-60 md:px-44 sm:px-24 xl:px-72 flex flex-col gap-3">
-                <Toolbar />
-            </div>
-            <div className=" px-4 lg:px-48 md:px-32 sm:px-10 xl:px-60 flex flex-col gap-3">
-                <Editor />
+            <div className=" flex flex-col gap-2">
+                <div className=" px-16 lg:px-60 md:px-44 sm:px-24 xl:px-72 flex flex-col gap-3">
+                    <Toolbar />
+                </div>
+                <div className=" px-4 lg:px-48 md:px-32 sm:px-10 xl:px-60 flex flex-col gap-3">
+                    <Editor />
+                </div>
             </div>
         </div>
     );
