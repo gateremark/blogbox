@@ -8,15 +8,26 @@ import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { useTheme } from "next-themes";
 import { Toaster, toast } from "sonner";
+import { useState, useEffect } from "react";
 
 const Home: React.FC = () => {
+    const [mounted, setMounted] = useState(false);
     const { data: session } = useSession();
     const { theme } = useTheme();
     toast.info("In Development! 🚀");
 
+    useEffect(() => setMounted(true), []);
+
+    if (!mounted) return null;
+
     return (
         <main className="relative h-fit pt-4 pb-6 md:px-8 px-4 flex flex-col items-center bg-gradient-to-b from-[#d6dbdc] to-[#ffffff] dark:from-[#000000] dark:to-[#121212]">
-            <Toaster richColors position="bottom-left" theme="dark" closeButton />
+            <Toaster
+                richColors
+                position="bottom-left"
+                theme="dark"
+                closeButton
+            />
             <header className=" w-full h-[75px] flex items-center ">
                 <Nav />
             </header>
@@ -47,21 +58,25 @@ const Home: React.FC = () => {
                 )}
 
                 {theme === "dark" ? (
-                    <Image
-                        src="https://res.cloudinary.com/dvuazircp/image/upload/v1703279901/new_portfolio/reading_no5et4.webp"
-                        height={500}
-                        width={500}
-                        alt="A person reading"
-                        className="w-[500px] h-auto pt-10"
-                    />
+                    <>
+                        <Image
+                            src="https://res.cloudinary.com/dvuazircp/image/upload/v1703279901/new_portfolio/reading_no5et4.webp"
+                            height={500}
+                            width={500}
+                            alt="A person reading"
+                            className="w-[500px] h-auto pt-10"
+                        />
+                    </>
                 ) : (
-                    <Image
-                        src="https://res.cloudinary.com/dvuazircp/image/upload/v1701293531/new_portfolio/kqvhmllwvodva5pjr6fs.webp"
-                        height={500}
-                        width={500}
-                        alt="A person reading"
-                        className="w-[500px] h-auto pt-10"
-                    />
+                    <>
+                        <Image
+                            src="https://res.cloudinary.com/dvuazircp/image/upload/v1701293531/new_portfolio/kqvhmllwvodva5pjr6fs.webp"
+                            height={500}
+                            width={500}
+                            alt="A person reading"
+                            className="w-[500px] h-auto pt-10"
+                        />
+                    </>
                 )}
             </div>
             <Footer />

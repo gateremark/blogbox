@@ -7,11 +7,13 @@ import { FcGoogle } from "react-icons/fc";
 import { useTheme } from "next-themes";
 
 const Join: React.FC = () => {
+    const [mounted, setMounted] = useState(false);
     const { theme } = useTheme();
     const [providers, setProviders] = useState<Record<string, any> | null>(
         null
     );
     useEffect(() => {
+        setMounted(true);
         const fetchProviders = async () => {
             const providers = await getProviders();
             // Handle providers data as needed
@@ -21,6 +23,9 @@ const Join: React.FC = () => {
 
         fetchProviders();
     }, []);
+    // useEffect(() => setMounted(true), []);
+
+    if (!mounted) return null;
     return (
         <main className="relative h-fit md:h-screen pt-4 pb-6 md:px-8 px-4 flex flex-col items-center justify-center bg-gradient-to-b from-[#d6dbdc] to-[#ffffff] dark:from-[#000000] dark:to-[#121212]">
             {theme === "light" ? (

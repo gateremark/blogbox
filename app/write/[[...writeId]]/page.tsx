@@ -3,7 +3,7 @@
 import { useSession } from "next-auth/react";
 import { Toolbar } from "@/app/components/Toolbar";
 import Link from "next/link";
-import { MdHome } from "react-icons/md";
+import { MdArrowBack } from "react-icons/md";
 import Editor from "@/app/components/editor";
 
 const page = () => {
@@ -16,20 +16,21 @@ const page = () => {
             <div className="h-60 flex gap-2 items-center">
                 <h1 className=" ml-5">Incomplete...</h1>
                 <Link
-                    href="/"
+                    href="/blogs"
                     className="hover:bg-[#cacaca] dark:hover:bg-[#4e4e4e] flex justify-center items-center text-xl gap-2 px-2 py-3 rounded-md transition duration-200 ease-in-out"
-                    title="Home"
+                    title="Blogs"
                 >
                     {" "}
+                    <MdArrowBack />
                     Go back
-                    <MdHome />
                 </Link>
             </div>
-            <div className=" px-10 lg:px-60 md:px-44 sm:px-24 xl:px-72 flex flex-col gap-3">
+            <div className=" px-16 lg:px-60 md:px-44 sm:px-24 xl:px-72 flex flex-col gap-3">
                 <Toolbar />
             </div>
-
-            <Editor />
+            <div className=" px-4 lg:px-48 md:px-32 sm:px-10 xl:px-60 flex flex-col gap-3">
+                <Editor />
+            </div>
         </div>
     );
 };
