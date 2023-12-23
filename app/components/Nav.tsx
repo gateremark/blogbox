@@ -81,7 +81,7 @@ const Nav: React.FC = () => {
                         isOpen ? "block" : "hidden"
                     } w-60 block absolute flex-grow lg:flex lg:items-center lg:w-auto right-0 top-0`}
                 >
-                    <div className="flex h-screen flex-col justify-start items-center md:hidden rounded-lg bg-[#424242] pt-2">
+                    <div className="flex h-fit flex-col justify-start gap-5 items-center md:hidden rounded-lg bg-[#424242] pt-2">
                         {theme === "light" ? (
                             <Image
                                 src="https://res.cloudinary.com/dvuazircp/image/upload/v1699598453/new_portfolio/blogbox2_sftlp6.webp"
@@ -101,7 +101,7 @@ const Nav: React.FC = () => {
                                 className="w-full px-4"
                             />
                         )}
-                        <div className=" h-full flex flex-col justify-evenly items-center">
+                        <div className=" h-full gap-5 pb-4 flex flex-col justify-evenly items-center">
                             {session ? (
                                 <div className=" flex gap-2 items-center justify-center px-3 rounded  py-2 transition duration-200 ease-in-out cursor-default bg-[#000000] text-[#D8DCDD] hover:bg-[#2E2E2E]">
                                     Hello{" "}
