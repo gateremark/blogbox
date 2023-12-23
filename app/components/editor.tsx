@@ -1,3 +1,5 @@
+"use client";
+
 import {
     BlockNoteEditor,
     uploadToTmpFilesDotOrg_DEV_ONLY,
