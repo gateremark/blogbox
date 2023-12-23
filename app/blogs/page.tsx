@@ -38,7 +38,7 @@ const Blogs = () => {
         }
     };
 
-    console.log("Agent:", navigator.userAgent.match);
+    // console.log("Agent:", navigator.userAgent.match);
     return (
         <div className="relative h-screen pt-5 pb-6 md:px-8 px-4 flex flex-col items-center bg-gradient-to-b from-[#d6dbdc] to-[#ffffff] gap-2 dark:from-[#000000] dark:to-[#121212]">
             <header className="flex w-full items-center gap-2">
