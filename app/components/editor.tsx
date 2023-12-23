@@ -6,11 +6,16 @@ import * as Y from "yjs";
 import { WebrtcProvider } from "y-webrtc";
 // import YPartyKitProvider from "y-partykit/provider";
 import { useSession } from "next-auth/react";
+import { useState, useEffect } from "react";
 
 export default function Editor() {
     const { data: session } = useSession();
     const doc = new Y.Doc();
-    const userName = session?.user?.name ?? "Anonymous";
+    const [userName, setUserName] = useState("Anonymous");
+
+    useEffect(() => {
+        return setUserName(session?.user?.name ?? "Anonymous");
+    }, [session]);
     const userEmail = session?.user?.email ?? "";
     // console.log(userName, userEmail);
 
