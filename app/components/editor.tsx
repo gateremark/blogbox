@@ -65,16 +65,21 @@ export default function Editor() {
         if (event.ctrlKey && event.key === "c") {
             const textCursorPosition: any = editor.getTextCursorPosition();
             const blockText = textCursorPosition.block.content?.[0]?.text;
-            console.log(
-                "textCursorPosition: ",
-                textCursorPosition.block.content?.[0]?.text
-            );
+            // console.log(
+            //     "textCursorPosition: ",
+            //     textCursorPosition.block.content?.[0]?.text
+            // );
 
             if (blockText !== undefined) {
                 // send the blockText to the completion API
                 try {
                     const completionResult = await complete(blockText);
-                    console.log("Completion: ", completionResult);
+                    // console.log("Completion: ", completionResult);
+                    editor.insertBlocks(
+                        [{ content: completionResult ?? "" }],
+                        editor.getTextCursorPosition().block,
+                        "after"
+                    );
                 } catch (error) {
                     // Handle any errors here
                     console.error("Error with completion: ", error);
@@ -84,12 +89,6 @@ export default function Editor() {
             }
 
             // console.log("Completion: ", completion);
-
-            editor.insertBlocks(
-                [{ content: "This block was inserted!" }],
-                editor.getTextCursorPosition().block,
-                "after"
-            );
         }
     };
     // console.log("Completion: ", completion);

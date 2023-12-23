@@ -42,7 +42,7 @@ export const Toolbar = () => {
     };
     return (
         <div>
-            <div>
+            <div className="flex gap-2 items-center">
                 <button className="relative opacity-100 bg-[#cacaca] md:px-3 md:py-2 px-2 py-1 rounded-md transition duration-100 ease-in-out flex justify-center items-center gap-2">
                     <label
                         htmlFor="image"
@@ -69,6 +69,9 @@ export const Toolbar = () => {
                         className="cursor-pointer"
                     />
                 </button>
+                <span className=" text-[] dark:text-[] italic">"
+                    <span className=" font-bold">Ctrl + C</span> for AI autocompletion"
+                </span>
             </div>
             {isEditing ? (
                 <TextareaAutosize
