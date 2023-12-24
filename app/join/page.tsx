@@ -16,15 +16,13 @@ const Join: React.FC = () => {
         setMounted(true);
         const fetchProviders = async () => {
             const providers = await getProviders();
-            // Handle providers data as needed
-            // console.log(providers);
+            // Handle providers data
             setProviders(providers as Record<string, any> | null);
         };
 
         fetchProviders();
     }, []);
 
-    // useEffect(() => setMounted(true), []);
 
     if (!mounted) return null;
     return (

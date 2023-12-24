@@ -90,11 +90,7 @@ const Blogs = () => {
                                     className="flex items-center justify-center px-3 py-2 border rounded text-[#000000] border-[#000000] hover:bg-[#cacaca] hover:border-[#8b8181] dark:bg-[#ffffff] dark:text-[#000000] dark:hover:bg-[#808080]"
                                 >
                                     <RiMenu2Fill className="h-6 w-6 " />
-                                    {/* {isOpen ? (
-                            <RiCloseFill className="h-6 w-6 " />
-                        ) : (
-                            
-                        )} */}
+                                   
                                 </button>
                             )}
                         </div>

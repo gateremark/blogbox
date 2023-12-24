@@ -10,9 +10,7 @@ import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 
 const Page = () => {
-    // console.log(uuidv4());
-    // const { data: session } = useSession();
-    // console.log(session);
+
     const [mounted, setMounted] = useState(false);
     const { theme, setTheme } = useTheme();
 
