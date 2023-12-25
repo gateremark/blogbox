@@ -49,7 +49,7 @@ const Page = () => {
                         </button>
                     )}
                 </div>
-                <Image src={testImg} alt="testimg" className=" w-full h-full" />
+                <Image src={testImg} alt="testimg" className=" w-full h-full rounded" />
             </div>
 
             <div className=" flex flex-col gap-2">
