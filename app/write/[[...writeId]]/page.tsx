@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 import { Toolbar } from "@/app/components/Toolbar";
 import Link from "next/link";
 import { MdArrowBack } from "react-icons/md";
-import Editor from "@/app/components/editor";
+import Editor from "@/app/components/Editor";
 import { FiSun, FiMoon } from "react-icons/fi";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";

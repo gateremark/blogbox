@@ -11,6 +11,7 @@ import { FiSun, FiMoon } from "react-icons/fi";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import { RiCloseFill, RiMenu2Fill } from "react-icons/ri";
+import BlogCard from "@/app/components/BlogCard";
 
 const Blogs = () => {
     const { data: session } = useSession();
@@ -90,7 +91,6 @@ const Blogs = () => {
                                     className="flex items-center justify-center px-3 py-2 border rounded text-[#000000] border-[#000000] hover:bg-[#cacaca] hover:border-[#8b8181] dark:bg-[#ffffff] dark:text-[#000000] dark:hover:bg-[#808080]"
                                 >
                                     <RiMenu2Fill className="h-6 w-6 " />
-                                   
                                 </button>
                             )}
                         </div>
@@ -246,7 +246,9 @@ const Blogs = () => {
             </header>
 
             <h1 className="text-5xl font-semibold text-center">Blogs</h1>
-            <div className="flex flex-col"></div>
+            <div className="flex flex-col items-center md:w-[70%] w-[95%]">
+                <BlogCard />
+            </div>
         </div>
     );
 };
