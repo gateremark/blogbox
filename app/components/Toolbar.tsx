@@ -1,18 +1,25 @@
 "use client";
 
-import { ElementRef, useRef, useState } from "react";
+import { ElementRef, useRef, useState, useEffect } from "react";
 import { CiImageOn } from "react-icons/ci";
 import TextareaAutosize from "react-textarea-autosize";
 import { ref, uploadBytesResumable } from "firebase/storage";
 import { v4 as uuidv4 } from "uuid";
 import { Toaster, toast } from "sonner";
 import { BsShareFill } from "react-icons/bs";
+import { useTheme } from "next-themes";
 
 export const Toolbar = () => {
     const inputRef = useRef<ElementRef<"textarea">>(null);
     const [isEditing, setIsEditing] = useState(false);
     const [value, setValue] = useState("Add Title...");
     const [image, setImage] = useState(null);
+    const { theme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => setMounted(true), []);
+
+    if (!mounted) return null;
 
     const onChange = (e: any) => {
         setImage(e.target.files);
@@ -45,9 +52,8 @@ export const Toolbar = () => {
     return (
         <div>
             <Toaster
-                richColors
                 position="bottom-right"
-                theme="dark"
+                theme={theme === "dark" ? "dark" : "light"}
                 closeButton
             />
             <div

@@ -27,13 +27,12 @@ const BlogCard = (props: Props) => {
 
     return (
         <>
+            <Toaster
+                position="bottom-right"
+                theme={theme === "dark" ? "dark" : "light"}
+                closeButton
+            />
             <div className=" flex flex-col bg-transparent border border-slate-400 rounded-2xl hover:border-slate-500 dark:hover:border-slate-600 dark:border-slate-800/80 p-6 my-3 w-full">
-                <Toaster
-                    richColors
-                    position="bottom-right"
-                    theme={theme === "dark" ? "dark" : "light"}
-                    closeButton
-                />
                 <div className="flex gap-3 items-center">
                     <Image
                         src={gatereimg}
@@ -140,12 +139,6 @@ const BlogCard = (props: Props) => {
             {/* --------------------------------------------------- Sample Blog 2 ----------------------------- */}
 
             <div className=" flex flex-col bg-transparent border border-slate-400 rounded-2xl hover:border-slate-500 dark:hover:border-slate-600 dark:border-slate-800/80 p-6 my-3 w-full">
-                <Toaster
-                    richColors
-                    position="bottom-right"
-                    theme={theme === "dark" ? "dark" : "light"}
-                    closeButton
-                />
                 <div className="flex gap-3 items-center">
                     <Image
                         src={gatereimg}
@@ -256,12 +249,6 @@ const BlogCard = (props: Props) => {
             {/* --------------------------------------------------- Sample Blog 3 ----------------------------- */}
 
             <div className=" flex flex-col bg-transparent border border-slate-400 rounded-2xl hover:border-slate-500 dark:hover:border-slate-600 dark:border-slate-800/80 p-6 my-3 w-full">
-                <Toaster
-                    richColors
-                    position="bottom-right"
-                    theme={theme === "dark" ? "dark" : "light"}
-                    closeButton
-                />
                 <div className="flex gap-3 items-center">
                     <Image
                         src={gatereimg}

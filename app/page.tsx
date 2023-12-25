@@ -25,7 +25,7 @@ const Home: React.FC = () => {
             <Toaster
                 richColors
                 position="bottom-left"
-                theme="dark"
+                theme={theme === "dark" ? "dark" : "light"}
                 closeButton
             />
             <header className=" w-full h-[75px] flex items-center ">
