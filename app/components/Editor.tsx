@@ -20,7 +20,7 @@ export default function Editor() {
         api: "/api/completion",
     });
 
-    const userName = session?.user?.name ?? "";
+    const userName = session?.user?.name ?? "User";
     const provider = new WebrtcProvider("blogbox", doc);
 
     const insertNewBlockShortcut = async (
