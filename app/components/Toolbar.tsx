@@ -5,6 +5,8 @@ import { CiImageOn } from "react-icons/ci";
 import TextareaAutosize from "react-textarea-autosize";
 import { ref, uploadBytesResumable } from "firebase/storage";
 import { v4 as uuidv4 } from "uuid";
+import { Toaster, toast } from "sonner";
+import { BsShareFill } from "react-icons/bs";
 
 export const Toolbar = () => {
     const inputRef = useRef<ElementRef<"textarea">>(null);
@@ -42,6 +44,22 @@ export const Toolbar = () => {
     };
     return (
         <div>
+            <Toaster
+                richColors
+                position="bottom-right"
+                theme="dark"
+                closeButton
+            />
+            <div
+                className=" fixed top-[10%] right-[3%] z-10 cursor-pointer w-10 h-10 flex justify-center items-center rounded-full transition duration-500 ease-in-out bg-[#000000] text-[#D8DCDD] hover:bg-[#2E2E2E] dark:bg-[#ffffff] dark:text-[#000000] dark:hover:bg-[#808080]"
+                title="Copy Link to Draft Blog"
+                onClick={() => {
+                    navigator.clipboard.writeText(window.location.href);
+                    toast.success("Link to Draft Blog Copied!");
+                }}
+            >
+                <BsShareFill className="text-lg" />
+            </div>
             <div className="flex gap-2 items-center">
                 <button className="relative opacity-100 bg-[#cacaca] md:px-3 md:py-2 px-2 py-1 rounded-md transition duration-100 ease-in-out flex justify-center items-center gap-2">
                     <label
