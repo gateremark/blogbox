@@ -29,7 +29,7 @@ const BlogCard = (props: Props) => {
             <div className=" flex flex-col bg-transparent border border-slate-400 rounded-2xl hover:border-slate-500 dark:hover:border-slate-600 dark:border-slate-800/80 p-6 my-3 w-full">
                 <Toaster
                     richColors
-                    position="top-right"
+                    position="bottom-right"
                     theme={theme === "dark" ? "dark" : "light"}
                     closeButton
                 />
@@ -139,7 +139,7 @@ const BlogCard = (props: Props) => {
             <div className=" flex flex-col bg-transparent border border-slate-400 rounded-2xl hover:border-slate-500 dark:hover:border-slate-600 dark:border-slate-800/80 p-6 my-3 w-full">
                 <Toaster
                     richColors
-                    position="top-right"
+                    position="bottom-right"
                     theme={theme === "dark" ? "dark" : "light"}
                     closeButton
                 />
