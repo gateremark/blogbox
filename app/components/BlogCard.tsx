@@ -52,7 +52,7 @@ const BlogCard = (props: Props) => {
                         </a>
                     </div>
                 </div>
-                <div className=" flex gap-3 mt-3">
+                <div className=" flex gap-3 mt-3 flex-col md:flex-row">
                     <div
                         className=" flex flex-col"
                         onClick={() => router.push(`/blog/${id}`)}
@@ -60,7 +60,7 @@ const BlogCard = (props: Props) => {
                         <h1 className="font-heading text-base sm:text-xl font-semibold sm:font-bold  text-slate-700 dark:text-slate-200 cursor-pointer">
                             Getting Started with React
                         </h1>
-                        <p className="text-base font-normal text-slate-500 dark:text-slate-400 cursor-pointer line-clamp-3">
+                        <p className="text-base font-normal text-slate-500 dark:text-slate-400 cursor-pointer line-clamp-3 hidden md:block">
                             {" "}
                             Blog Subtitle - Lorem ipsum dolor sit amet,
                             consectetur adipisicing elit. Ut inventore pariatur
@@ -73,7 +73,7 @@ const BlogCard = (props: Props) => {
                             perferendis atque.
                         </p>
                     </div>
-                    <div className=" h-32 w-[1000px] rounded-md">
+                    <div className=" h-32 md:w-[1000px] rounded-md ">
                         <Image
                             src={reactimg}
                             alt="blogimage"
@@ -107,14 +107,16 @@ const BlogCard = (props: Props) => {
                         <p className=" font-medium">{likeCount} Likes</p>
                     </span>
                     <span className="flex gap-1 items-center">
-                        <p className="rounded-full px-2 py-1 cursor-pointer text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-300 hover:bg-slate-400 dark:bg-slate-900 dark:hover:bg-slate-700 w-min max-w-[126px] truncate text-left">
-                            {" "}
-                            React
-                        </p>
-                        <p className="rounded-full px-2 py-1 cursor-pointer text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-300 hover:bg-slate-400 dark:bg-slate-900 dark:hover:bg-slate-700 w-min max-w-[120px] truncate text-left">
-                            {" "}
-                            Frontend Development
-                        </p>
+                        <span className=" flex flex-wrap gap-1 justify-end">
+                            <p className="rounded-full px-2 py-1 cursor-pointer text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-300 hover:bg-slate-400 dark:bg-slate-900 dark:hover:bg-slate-700 w-min max-w-[126px] truncate text-left">
+                                {" "}
+                                React
+                            </p>
+                            <p className="rounded-full px-2 py-1 cursor-pointer text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-300 hover:bg-slate-400 dark:bg-slate-900 dark:hover:bg-slate-700 w-min max-w-[120px] truncate text-left">
+                                {" "}
+                                Frontend Development
+                            </p>
+                        </span>
                         <span className=" cursor-default">|</span>
                         {isSaved ? (
                             <BsBookmarkCheckFill
@@ -158,7 +160,7 @@ const BlogCard = (props: Props) => {
                         </a>
                     </div>
                 </div>
-                <div className=" flex gap-3 mt-3">
+                <div className=" flex gap-3 mt-3 flex-col md:flex-row">
                     <div
                         className=" flex flex-col"
                         onClick={() => router.push(`/blog/${id}`)}
@@ -166,7 +168,7 @@ const BlogCard = (props: Props) => {
                         <h1 className="font-heading text-base sm:text-xl font-semibold sm:font-bold  text-slate-700 dark:text-slate-200 cursor-pointer">
                             Python for Data Science and Machine Learning
                         </h1>
-                        <p className="text-base font-normal text-slate-500 dark:text-slate-400 cursor-pointer line-clamp-3">
+                        <p className="text-base font-normal text-slate-500 dark:text-slate-400 cursor-pointer line-clamp-3 hidden md:block">
                             {" "}
                             Blog Subtitle - Lorem ipsum dolor sit amet,
                             consectetur adipisicing elit. Ut inventore pariatur
@@ -179,7 +181,7 @@ const BlogCard = (props: Props) => {
                             perferendis atque.
                         </p>
                     </div>
-                    <div className=" h-32 w-[1000px] rounded-md">
+                    <div className=" h-32 md:w-[1000px] rounded-md">
                         <Image
                             src={testimg}
                             alt="blogimage"
@@ -188,7 +190,7 @@ const BlogCard = (props: Props) => {
                         />
                     </div>
                 </div>
-                <div className="flex justify-between mt-4 text-slate-700 dark:text-slate-200">
+                <div className="flex justify-between mt-4 text-slate-700 dark:text-slate-200 w-full">
                     <span className="flex gap-1 items-center">
                         {isLiked ? (
                             <AiFillLike
@@ -213,18 +215,20 @@ const BlogCard = (props: Props) => {
                         <p className=" font-medium">{likeCount} Likes</p>
                     </span>
                     <span className="flex gap-1 items-center">
-                        <p className="rounded-full px-2 py-1 cursor-pointer text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-300 hover:bg-slate-400 dark:bg-slate-900 dark:hover:bg-slate-700 w-min max-w-[126px] truncate text-left">
-                            {" "}
-                            Python
-                        </p>
-                        <p className="rounded-full px-2 py-1 cursor-pointer text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-300 hover:bg-slate-400 dark:bg-slate-900 dark:hover:bg-slate-700 w-min max-w-[120px] truncate text-left">
-                            {" "}
-                            Data Science
-                        </p>
-                        <p className="rounded-full px-2 py-1 cursor-pointer text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-300 hover:bg-slate-400 dark:bg-slate-900 dark:hover:bg-slate-700 w-min max-w-[120px] truncate text-left">
-                            {" "}
-                            Machine Learning
-                        </p>
+                        <span className=" flex flex-wrap gap-1 justify-end">
+                            <p className="rounded-full px-2 py-1 cursor-pointer text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-300 hover:bg-slate-400 dark:bg-slate-900 dark:hover:bg-slate-700 w-min max-w-[126px] truncate text-left">
+                                {" "}
+                                Python
+                            </p>
+                            <p className="rounded-full px-2 py-1 cursor-pointer text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-300 hover:bg-slate-400 dark:bg-slate-900 dark:hover:bg-slate-700 w-min max-w-[120px] truncate text-left">
+                                {" "}
+                                Data Science
+                            </p>
+                            <p className="rounded-full px-2 py-1 cursor-pointer text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-300 hover:bg-slate-400 dark:bg-slate-900 dark:hover:bg-slate-700 w-min max-w-[120px] truncate text-left">
+                                {" "}
+                                Machine Learning
+                            </p>
+                        </span>
                         <span className=" cursor-default">|</span>
                         {isSaved ? (
                             <BsBookmarkCheckFill
@@ -268,7 +272,7 @@ const BlogCard = (props: Props) => {
                         </a>
                     </div>
                 </div>
-                <div className=" flex gap-3 mt-3">
+                <div className=" flex gap-3 mt-3 flex-col md:flex-row">
                     <div
                         className=" flex flex-col"
                         onClick={() => router.push(`/blog/${id}`)}
@@ -276,7 +280,7 @@ const BlogCard = (props: Props) => {
                         <h1 className="font-heading text-base sm:text-xl font-semibold sm:font-bold  text-slate-700 dark:text-slate-200 cursor-pointer">
                             Develop a REST API with Rust
                         </h1>
-                        <p className="text-base font-normal text-slate-500 dark:text-slate-400 cursor-pointer line-clamp-3">
+                        <p className="text-base font-normal text-slate-500 dark:text-slate-400 cursor-pointer line-clamp-3 hidden md:block">
                             {" "}
                             Blog Subtitle - Lorem ipsum dolor sit amet,
                             consectetur adipisicing elit. Ut inventore pariatur
@@ -289,7 +293,7 @@ const BlogCard = (props: Props) => {
                             perferendis atque.
                         </p>
                     </div>
-                    <div className=" h-32 w-[1000px] rounded-md">
+                    <div className=" h-32 md:w-[1000px] rounded-md">
                         <Image
                             src={rustimg}
                             alt="blogimage"
@@ -323,18 +327,20 @@ const BlogCard = (props: Props) => {
                         <p className=" font-medium">{likeCount} Likes</p>
                     </span>
                     <span className="flex gap-1 items-center">
-                        <p className="rounded-full px-2 py-1 cursor-pointer text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-300 hover:bg-slate-400 dark:bg-slate-900 dark:hover:bg-slate-700 w-min max-w-[126px] truncate text-left">
-                            {" "}
-                            Rust
-                        </p>
-                        <p className="rounded-full px-2 py-1 cursor-pointer text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-300 hover:bg-slate-400 dark:bg-slate-900 dark:hover:bg-slate-700 w-min max-w-[120px] truncate text-left">
-                            {" "}
-                            Backend Development
-                        </p>
-                        <p className="rounded-full px-2 py-1 cursor-pointer text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-300 hover:bg-slate-400 dark:bg-slate-900 dark:hover:bg-slate-700 w-min max-w-[120px] truncate text-left">
-                            {" "}
-                            API
-                        </p>
+                        <span className=" flex flex-wrap gap-1 justify-end">
+                            <p className="rounded-full px-2 py-1 cursor-pointer text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-300 hover:bg-slate-400 dark:bg-slate-900 dark:hover:bg-slate-700 w-min max-w-[126px] truncate text-left">
+                                {" "}
+                                Rust
+                            </p>
+                            <p className="rounded-full px-2 py-1 cursor-pointer text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-300 hover:bg-slate-400 dark:bg-slate-900 dark:hover:bg-slate-700 w-min max-w-[120px] truncate text-left">
+                                {" "}
+                                Backend Development
+                            </p>
+                            <p className="rounded-full px-2 py-1 cursor-pointer text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-300 hover:bg-slate-400 dark:bg-slate-900 dark:hover:bg-slate-700 w-min max-w-[120px] truncate text-left">
+                                {" "}
+                                API
+                            </p>
+                        </span>
                         <span className=" cursor-default">|</span>
                         {isSaved ? (
                             <BsBookmarkCheckFill

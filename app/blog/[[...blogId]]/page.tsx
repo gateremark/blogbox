@@ -18,9 +18,9 @@ const Page = () => {
     if (!mounted) return null;
 
     return (
-        <div className=" relative bg-gradient-to-b from-[#d6dbdc] to-[#ffffff] dark:from-[#000000] dark:to-[#121212] h-fit px-16 lg:px-60 md:px-44 sm:px-24 xl:px-72 flex flex-col gap-3">
-            <div className="h-60 flex gap-2 items-center mt-6">
-                <div className="absolute top-10 left-0 w-fit flex gap-1 items-center">
+        <div className=" relative bg-gradient-to-b from-[#d6dbdc] to-[#ffffff] dark:from-[#000000] dark:to-[#121212] h-fit px-6 lg:px-56 md:px-40 sm:px-20 xl:px-72 flex flex-col gap-3">
+            <div className="h-60 flex gap-2 items-center mt-20">
+                <div className="absolute top-5 w-fit flex gap-1 items-center">
                     <h1 className=" ml-5">Incomplete...</h1>
                     <Link
                         href="/blogs"
